@@ -138,3 +138,13 @@ const change = 2.3;
 const move = movements.map(USD => USD * change);
 console.log(movements);
 console.log(move);
+
+const moved = movements.map((USD, i) => {
+  if (movements > 0) {
+    return `movemont ${i + 1}: you deposited ${USD}`;
+    // console.log(` movement ${i + 1}: you deposited ${movement}`);
+  } else {
+    return `movemont ${i + 1}: you withdraw ${Math.abs(USD)}`;
+  }
+});
+console.log(moved);
