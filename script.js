@@ -101,7 +101,7 @@ console.log(accounts);
 //   ['GBP', 'Pound sterling'],
 // ]);
 
-// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 // let arr = [23, 45, 78];
@@ -169,3 +169,14 @@ console.log(accounts);
 //   // }
 // );
 // console.log(moved);
+
+const deposit = movements.filter(mov => mov > 0);
+console.log(deposit);
+console.log(movements);
+
+const depositFor = [];
+for (const mov of movements)
+  if (mov > 0) {
+    depositFor.push(mov);
+  }
+console.log(depositFor);
