@@ -60,7 +60,7 @@ const inputTransferAmount = document.querySelector(".form__input--amount");
 const inputLoanAmount = document.querySelector(".form__input--loan-amount");
 const inputCloseUsername = document.querySelector(".form__input--user");
 const inputClosePin = document.querySelector(".form__input--pin");
-
+//////////////////////DIPLAYING THE TRANSACTIONS ////////////////
 const displayMovement = movements => {
   containerMovements.innerHTML = "";
   movements.forEach(function (mov, i) {
@@ -76,7 +76,16 @@ const displayMovement = movements => {
   });
 };
 displayMovement(account1.movements);
+////CALCULATING ACCOUNT BALANCE///////////////////
+const displayBalance = function (movements) {
+  //cur >>>>>>>> current account
+  //acc >>>>>>>>> accumulator
+  const balance = movements.reduce((acc, cur) => acc + cur, 0);
+  labelBalance.textContent = `${balance} EUR`;
+};
 
+displayBalance(account1.movements);
+/////////////////DISPLAYING USERNAME////////////////////
 const createUsernames = accs => {
   //accs = accounts////////////////
   accs.forEach(account => {
@@ -89,7 +98,6 @@ const createUsernames = accs => {
 };
 
 createUsernames(accounts);
-console.log(accounts);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -198,9 +206,14 @@ console.log(withdrawal);
 console.log("________REDUCE METHOD______");
 
 console.log(movements);
-
+//REDUCE METHOD
 const balance = movements.reduce((acc, cur, i, arr) => {
   console.log(`iteration:${i} :${acc}`);
   return acc + cur;
 }, 0);
 console.log(balance);
+
+//USING FOR LOOP
+let balance2 = 0;
+for (const mov of movements) balance2 += mov;
+console.log(balance2);
