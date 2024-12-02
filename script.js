@@ -86,13 +86,15 @@ const displayBalance = function (movements) {
 
 displayBalance(account1.movements);
 
+//////////CULCULATING THE ACCOUNT INCOME AND OUTCOME////////////////
+
 const displaysummary = function (movements) {
   const incomes = movements
     .filter(mov => mov > 0)
     .reduce((acc, cur) => acc + cur, 0);
 
   labelSumIn.textContent = `${incomes} \u20AC`;
-
+  //////////OUTCOME PART//////////////
   const outcomes = movements
     .filter(mov => mov < 0)
     .reduce((acc, cur) => acc - cur, 0);
