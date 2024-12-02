@@ -77,6 +77,15 @@ const displayMovement = movements => {
 };
 displayMovement(account1.movements);
 
+const user = "Steven Thomas Williams"; // stw
+const userName = user
+  .toLocaleLowerCase()
+  .split(" ")
+  .map(name => name[0])
+  .join("");
+
+console.log(userName);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -127,29 +136,31 @@ displayMovement(account1.movements);
 // });
 
 //MAP METHOD
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
-const change = 2.3;
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const change = 2.3;
 
 //OLD WAY OF DOING THINGS
 
 // const move = movements.map(function (USD) {
 //   return USD * change;
-//USING THE ARROW FUNCTION METHOD
-const move = movements.map(USD => USD * change);
-console.log(movements);
-console.log(move);
+// //USING THE ARROW FUNCTION METHOD
+// const move = movements.map(USD => USD * change);
+// console.log(movements);
+// console.log(move);
 
-const moved = movements.map(
-  (USD, i) =>
-    //TERNARY OPERATOR
+// const moved = movements.map(
+//   (USD, i) =>
+//     //TERNARY OPERATOR
 
-    `movemont ${i + 1}: you${movements > 0 ? "deposited" : "withdraw"} ${USD}`
-  // IF ELSE METHPOD
+//     `movemont ${i + 1}: you ${USD > 0 ? "deposited" : "withdraw"} ${Math.abs(
+//       USD
+//     )}`
+//   // IF ELSE METHPOD
 
-  // if (movements > 0) {
-  //   return `movemont ${i + 1}: you deposited ${USD}`;
-  // } else {
-  //   return `movemont ${i + 1}: you withdraw ${Math.abs(USD)}`;
-  // }
-);
-console.log(moved);
+//   // if (movements > 0) {
+//   //   return `movemont ${i + 1}: you deposited ${USD}`;
+//   // } else {
+//   //   return `movemont ${i + 1}: you withdraw ${Math.abs(USD)}`;
+//   // }
+// );
+// console.log(moved);
