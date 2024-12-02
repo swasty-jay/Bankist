@@ -35,7 +35,8 @@ const account4 = {
 
 const accounts = [account1, account2, account3, account4];
 
-// Elements
+/////////////ELEMENTS//////////////////
+
 const labelWelcome = document.querySelector(".welcome");
 const labelDate = document.querySelector(".date");
 const labelBalance = document.querySelector(".balance__value");
@@ -97,8 +98,16 @@ const displaysummary = function (movements) {
   //////////OUTCOME PART//////////////
   const outcomes = movements
     .filter(mov => mov < 0)
-    .reduce((acc, cur) => acc - cur, 0);
-  labelSumOut.textContent = `${outcomes} \u20AC`;
+    .reduce((acc, cur) => acc + cur, 0);
+  labelSumOut.textContent = `${Math.abs(outcomes)} \u20AC`;
+
+  //////////INTEREST PART//////////////
+  const interest = movements
+    .filter(mov => mov > 0)
+
+    .reduce((acc, cur) => acc + (cur * account1.interestRate) / 100, 0);
+
+  labelSumInterest.textContent = `${interest} \u20ac`;
 };
 displaysummary(account1.movements);
 
