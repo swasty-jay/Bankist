@@ -180,3 +180,27 @@ for (const mov of movements)
     depositFor.push(mov);
   }
 console.log(depositFor);
+
+console.log("______CHALLENGE DONE😊____________");
+
+const withdrawals = movements.filter(mov => mov < 0);
+console.log(withdrawals);
+
+console.log("____FOR WITHDRAWAL_____");
+
+const withdrawal = [];
+for (const mov of movements)
+  if (mov < 0) {
+    withdrawal.push(mov);
+  }
+console.log(withdrawal);
+
+console.log("________REDUCE METHOD______");
+
+console.log(movements);
+
+const balance = movements.reduce((acc, cur, i, arr) => {
+  console.log(`iteration:${i} :${acc}`);
+  return acc + cur;
+}, 0);
+console.log(balance);
