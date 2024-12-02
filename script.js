@@ -125,3 +125,12 @@ displayMovement(account1.movements);
 // currencies.forEach(function (value, key, map) {
 //   console.log(`${key}: ${value}`);
 // });
+
+//MAP METHOD
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const change = 2.3;
+const move = movements.map(USD => {
+  return USD * change;
+});
+console.log(movements);
+console.log(move);
