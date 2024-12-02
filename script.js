@@ -77,14 +77,19 @@ const displayMovement = movements => {
 };
 displayMovement(account1.movements);
 
-const user = "Steven Thomas Williams"; // stw
-const userName = user
-  .toLocaleLowerCase()
-  .split(" ")
-  .map(name => name[0])
-  .join("");
+const createUsernames = accs => {
+  //accs = accounts////////////////
+  accs.forEach(account => {
+    account.userName = account.owner
+      .toLocaleLowerCase()
+      .split(" ")
+      .map(name => name[0])
+      .join("");
+  });
+};
 
-console.log(userName);
+createUsernames(accounts);
+console.log(accounts);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
