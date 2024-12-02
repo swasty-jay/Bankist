@@ -129,8 +129,12 @@ displayMovement(account1.movements);
 //MAP METHOD
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 const change = 2.3;
-const move = movements.map(USD => {
-  return USD * change;
-});
+
+//OLD WAY OF DOING THINGS
+
+// const move = movements.map(function (USD) {
+//   return USD * change;
+//USING THE ARROW FUNCTION METHOD
+const move = movements.map(USD => USD * change);
 console.log(movements);
 console.log(move);
