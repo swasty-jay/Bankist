@@ -178,42 +178,50 @@ const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 // );
 // console.log(moved);
 
-const deposit = movements.filter(mov => mov > 0);
-console.log(deposit);
+// const deposit = movements.filter(mov => mov > 0);
+// console.log(deposit);
+// console.log(movements);
+
+// const depositFor = [];
+// for (const mov of movements)
+//   if (mov > 0) {
+//     depositFor.push(mov);
+//   }
+// console.log(depositFor);
+
+// console.log("______CHALLENGE DONE😊____________");
+
+// const withdrawals = movements.filter(mov => mov < 0);
+// console.log(withdrawals);
+
+// console.log("____FOR WITHDRAWAL_____");
+
+// const withdrawal = [];
+// for (const mov of movements)
+//   if (mov < 0) {
+//     withdrawal.push(mov);
+//   }
+// console.log(withdrawal);
+
+// console.log("________REDUCE METHOD______");
+
 console.log(movements);
+// //REDUCE METHOD
+// const balance = movements.reduce((acc, cur, i, arr) => {
+//   console.log(`iteration:${i} :${acc}`);
+//   return acc + cur;
+// }, 0);
+// console.log(balance);
 
-const depositFor = [];
-for (const mov of movements)
-  if (mov > 0) {
-    depositFor.push(mov);
-  }
-console.log(depositFor);
+// //USING FOR LOOP
+// let balance2 = 0;
+// for (const mov of movements) balance2 += mov;
+// console.log(balance2);
 
-console.log("______CHALLENGE DONE😊____________");
+//maximum value
+// const max = movements.reduce((acc, mov) => {
+//   if (acc > mov) return acc;
+//   else return mov;
+// }, movements[0]);
 
-const withdrawals = movements.filter(mov => mov < 0);
-console.log(withdrawals);
-
-console.log("____FOR WITHDRAWAL_____");
-
-const withdrawal = [];
-for (const mov of movements)
-  if (mov < 0) {
-    withdrawal.push(mov);
-  }
-console.log(withdrawal);
-
-console.log("________REDUCE METHOD______");
-
-console.log(movements);
-//REDUCE METHOD
-const balance = movements.reduce((acc, cur, i, arr) => {
-  console.log(`iteration:${i} :${acc}`);
-  return acc + cur;
-}, 0);
-console.log(balance);
-
-//USING FOR LOOP
-let balance2 = 0;
-for (const mov of movements) balance2 += mov;
-console.log(balance2);
+// console.log(max);
