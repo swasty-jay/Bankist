@@ -139,12 +139,17 @@ const move = movements.map(USD => USD * change);
 console.log(movements);
 console.log(move);
 
-const moved = movements.map((USD, i) => {
-  if (movements > 0) {
-    return `movemont ${i + 1}: you deposited ${USD}`;
-    // console.log(` movement ${i + 1}: you deposited ${movement}`);
-  } else {
-    return `movemont ${i + 1}: you withdraw ${Math.abs(USD)}`;
-  }
-});
+const moved = movements.map(
+  (USD, i) =>
+    //TERNARY OPERATOR
+
+    `movemont ${i + 1}: you${movements > 0 ? "deposited" : "withdraw"} ${USD}`
+  // IF ELSE METHPOD
+
+  // if (movements > 0) {
+  //   return `movemont ${i + 1}: you deposited ${USD}`;
+  // } else {
+  //   return `movemont ${i + 1}: you withdraw ${Math.abs(USD)}`;
+  // }
+);
 console.log(moved);
